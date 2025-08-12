@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alberta Class 7 – Practice Quiz</title>
+  <style>
+    :root {
+      --bg: #0f172a; /* slate-900 */
+      --card: #111827ee; /* gray-900 */
+      --muted: #94a3b8; /* slate-400 */
+      --text: #e5e7eb; /* gray-200 */
+      --accent: #22d3ee; /* cyan-400 */
+      --accent2: #34d399; /* emerald-400 */
+      --wrong: #f87171; /* red-400 */
+      --right: #4ade80; /* green-400 */
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';
+      background: radial-gradient(1200px 800px at 70% -10%, #1f2937 0%, var(--bg) 45%);
+      color: var(--text);
+      min-height: 100svh;
+      display: grid; place-items: center; padding: 24px;
+    }
+    .app { width: 100%; max-width: 960px; }
+    header { display: flex; gap: 12px; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+    header h1 { font-size: clamp(1.25rem, 1.5vw + 1rem, 1.75rem); margin: 0; font-weight: 700; letter-spacing: .2px; }
+    .controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .controls input[type="url"], .controls input[type="file"], .controls textarea {
+      background: #0b1220; color: var(--text); border: 1px solid #1f2937; border-radius: 10px; padding: 10px 12px; outline: none; width: min(520px, 60vw);
+    }
+    .controls button { background: linear-gradient(135deg, var(--accent), var(--accent2)); border: 0; color: #0b1220; padding: 10px 14px; border-radius: 12px; font-weight: 700; cursor: pointer; }
+    .controls button.secondary { background: #111827; color: var(--text); border: 1px solid #1f2937; }
+    .card { background: var(--card); border: 1px solid #1f2937; border-radius: 16px; padding: 18px; box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+    .meta { display: flex; gap: 12px; align-items: center; justify-content: space-between; margin-bottom: 10px; color: var(--muted); font-size: .95rem; }
+    .progress { height: 8px; background: #0b1220; border-radius: 999px; overflow: hidden; }
+    .progress > div { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2)); width: 0%; transition: width .25s ease; }
+    .q { font-size: 1.1rem; line-height: 1.5; margin: 10px 0 14px; }
+    .options { display: grid; gap: 10px; }
+    .opt { background: #0b1220; border: 1px solid #1f2937; color: var(--text); border-radius: 12px; padding: 12px; cursor: pointer; text-align: left; }
+    .opt:hover { border-color: #334155; }
+    .opt.correct { border-color: var(--right); outline: 2px solid color-mix(in srgb, var(--right) 30%, transparent); }
+    .opt.wrong { border-color: var(--wrong); outline: 2px solid color-mix(in srgb, var(--wrong) 30%, transparent); }
+    .actions { display: flex; gap: 8px; margin-top: 14px; }
+    .actions button { background: #0b1220; border: 1px solid #1f2937; color: var(--text); padding: 10px 14px; border-radius: 12px; cursor: pointer; }
+    .actions button.primary { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #0b1220; border: 0; font-weight: 700; }
+    .pill { padding: 6px 10px; border-radius: 999px; border: 1px solid #1f2937; background: #0b1220; color: var(--muted); font-variant-numeric: tabular-nums; }
+    .footer { margin-top: 16px; color: var(--muted); font-size: .9rem; text-align: center; }
+    details { margin-top: 10px; }
+    details summary { cursor: pointer; color: var(--muted); }
+    .hidden { display: none; }
+    @media (max-width: 560px) {
+      .controls input[type="url"], .controls textarea { width: 100%; }
+      header { align-items: start; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Alberta Class 7 – Practice Quiz</h1>
+      <div class="controls">
+        <input id="src" type="url" placeholder="Paste RAW JSON URL (e.g., https://gist.githubusercontent.com/.../raw/alberta_class7_questions_pretty.json)" />
+        <button id="load">Load</button>
+        <label class="button secondary">
+          <input id="file" type="file" accept="application/json" class="hidden" />
+          <span class="pill">Upload JSON</span>
+        </label>
+        <button id="reset" class="secondary">Reset</button>
+      </div>
+    </header>
+
+    <div class="card" id="intro">
+      <p>Load questions by pasting a <strong>RAW</strong> JSON URL (e.g., from your GitHub Gist) or by uploading a local <code>.json</code> file. You can also pass <code>?src=&lt;raw-url&gt;</code> in the page URL.</p>
+      <details>
+        <summary>JSON structure (expected)</summary>
+        <pre style="white-space:pre-wrap; color: var(--muted);">
+[
+  {"question": "...", "options": ["A","B","C","D"], "answer": "B"},
+  ...
+]
+        </pre>
+      </details>
+    </div>
+
+    <div class="card hidden" id="quiz">
+      <div class="meta">
+        <div class="pill" id="counter">Q 1/50</div>
+        <div class="pill" id="score">Score 0</div>
+      </div>
+      <div class="progress" aria-hidden="true"><div id="bar"></div></div>
+      <div class="q" id="question"></div>
+      <div class="options" id="options"></div>
+      <div class="actions">
+        <button id="prev" class="secondary">Back</button>
+        <button id="next" class="primary">Next</button>
+        <button id="finish" class="secondary">Finish</button>
+      </div>
+      <details id="review" class="hidden">
+        <summary>Show answer</summary>
+        <div id="answerText" style="margin-top:6px"></div>
+      </details>
+    </div>
+
+    <div class="card hidden" id="result">
+      <h2 style="margin:0 0 8px">Results</h2>
+      <p id="summary" style="margin:0 0 12px"></p>
+      <div id="breakdown" style="display:grid; gap:8px"></div>
+      <div class="actions" style="margin-top:16px">
+        <button id="retry" class="primary">Retry</button>
+        <button id="restart" class="secondary">Load new JSON</button>
+      </div>
+    </div>
+
+    <div class="footer">
+      Tip: Host this file on GitHub Pages or Netlify. Provide the <strong>RAW</strong> JSON URL via the input above or the <code>?src=</code> query.
+    </div>
+  </div>
+
+  <script>
+    const el = (id) => document.getElementById(id);
+    const intro = el('intro');
+    const quiz = el('quiz');
+    const result = el('result');
+    const qEl = el('question');
+    const optsEl = el('options');
+    const counter = el('counter');
+    const scoreEl = el('score');
+    const bar = el('bar');
+    const answerText = el('answerText');
+    const review = el('review');
+
+    const state = {
+      items: [],
+      idx: 0,
+      score: 0,
+      chosen: new Map(), // idx -> option string
+      order: [], // randomized order of questions
+    };
+
+    function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]] } return a }
+
+    function normalize(raw){
+      if (!Array.isArray(raw)) throw new Error('JSON root must be an array');
+      return raw.map((r,i)=>{
+        if(!r || typeof r!== 'object') throw new Error(`Item ${i} is not an object`);
+        if(typeof r.question !== 'string') throw new Error(`Item ${i} missing "question"`);
+        if(!Array.isArray(r.options) || r.options.length < 2) throw new Error(`Item ${i} needs 2+ options`);
+        if(typeof r.answer !== 'string') throw new Error(`Item ${i} missing "answer"`);
+        return { question: r.question.trim(), options: r.options.slice(), answer: r.answer };
+      });
+    }
+
+    function loadItems(items){
+      state.items = items;
+      state.order = shuffle([...Array(items.length).keys()]);
+      state.idx = 0; state.score = 0; state.chosen = new Map();
+      intro.classList.add('hidden'); result.classList.add('hidden'); quiz.classList.remove('hidden');
+      render();
+    }
+
+    function render(){
+      const i = state.order[state.idx];
+      const item = state.items[i];
+      counter.textContent = `Q ${state.idx+1}/${state.items.length}`;
+      scoreEl.textContent = `Score ${state.score}`;
+      bar.style.width = `${((state.idx)/state.items.length)*100}%`;
+      qEl.textContent = item.question;
+      optsEl.innerHTML = '';
+      review.classList.add('hidden');
+      answerText.textContent = '';
+      const chosen = state.chosen.get(i);
+
+      item.options.forEach(opt => {
+        const b = document.createElement('button');
+        b.className = 'opt';
+        b.textContent = opt;
+        b.onclick = () => choose(opt);
+        if (chosen) {
+          b.classList.add(opt === item.answer ? 'correct' : (opt === chosen ? 'wrong' : ''));
+        }
+        optsEl.appendChild(b);
+      });
+
+      el('prev').disabled = state.idx === 0;
+      el('next').disabled = state.idx >= state.items.length-1;
+    }
+
+    function choose(opt){
+      const i = state.order[state.idx];
+      const item = state.items[i];
+      const prev = state.chosen.get(i);
+      if (!prev) {
+        state.chosen.set(i, opt);
+        if (opt === item.answer) state.score++;
+      } else {
+        // allow change of answer before moving on: adjust score
+        if (prev === item.answer && opt !== item.answer) state.score--;
+        if (prev !== item.answer && opt === item.answer) state.score++;
+        state.chosen.set(i, opt);
+      }
+      // show feedback
+      review.classList.remove('hidden');
+      answerText.textContent = `Correct answer: ${item.answer}`;
+      render();
+    }
+
+    function finish(){
+      const total = state.items.length;
+      const correct = state.score;
+      const percent = Math.round((correct/total)*100);
+      el('summary').textContent = `You scored ${correct} / ${total} (${percent}%).`;
+      const bd = el('breakdown');
+      bd.innerHTML = '';
+      state.order.forEach((idx, n)=>{
+        const it = state.items[idx];
+        const div = document.createElement('div');
+        const chosen = state.chosen.get(idx);
+        div.className = 'card';
+        div.innerHTML = `<div class="meta"><span class="pill">Q ${n+1}</span><span class="pill" style="border-color:${chosen===it.answer?'#14532d':'#7f1d1d'};color:${chosen===it.answer?'#bbf7d0':'#fecaca'}">${chosen===it.answer?'Correct':'Wrong'}</span></div>
+          <div class="q">${it.question}</div>
+          <div style="color:${chosen===it.answer?'#86efac':'#fca5a5'}">Your answer: ${chosen ?? '—'}</div>
+          <div style="margin-top:4px;color:#93c5fd">Correct answer: ${it.answer}</div>`;
+        bd.appendChild(div);
+      });
+      quiz.classList.add('hidden');
+      result.classList.remove('hidden');
+      bar.style.width = '100%';
+    }
+
+    // Navigation
+    el('prev').onclick = () => { if (state.idx>0){ state.idx--; render(); }};
+    el('next').onclick = () => { if (state.idx < state.items.length-1){ state.idx++; render(); }};
+    el('finish').onclick = finish;
+    el('retry').onclick = () => { state.idx = 0; state.score = 0; state.chosen = new Map(); quiz.classList.remove('hidden'); result.classList.add('hidden'); render(); };
+    el('restart').onclick = () => { location.search = ''; location.reload(); };
+    el('reset').onclick = () => { location.search=''; location.reload(); };
+
+    // Loaders
+    el('load').onclick = async () => {
+      const url = el('src').value.trim();
+      if (!url) return alert('Paste a RAW JSON URL first.');
+      try {
+        const res = await fetch(url, { headers: { 'Accept': 'application/json' } });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const json = await res.json();
+        loadItems(normalize(json));
+      } catch (e) { alert('Failed to load JSON: ' + e.message); }
+    };
+
+    el('file').addEventListener('change', (ev)=>{
+      const file = ev.target.files?.[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        try { const json = JSON.parse(reader.result); loadItems(normalize(json)); }
+        catch (e) { alert('Invalid JSON: ' + e.message); }
+      };
+      reader.readAsText(file);
+    });
+
+    // Query param loader (?src=...)
+    (function(){
+      const p = new URLSearchParams(location.search);
+      const src = p.get('src');
+      if (src) { el('src').value = src; el('load').click(); }
+    })();
+  </script>
+</body>
+</html>
