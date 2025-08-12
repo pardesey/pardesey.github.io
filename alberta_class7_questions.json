@@ -1,0 +1,582 @@
+[
+    {
+        "question": "In an Alberta roundabout, how does traffic circulate?",
+        "options": [
+            "Clockwise around the central island",
+            "Counter-clockwise around the central island",
+            "Straight through without curving",
+            "In any direction if no vehicles are present"
+        ],
+        "answer": "Counter-clockwise around the central island"
+    },
+    {
+        "question": "When approaching a roundabout, what should you do before entering?",
+        "options": [
+            "Accelerate to highway speed and merge",
+            "Choose the correct lane, slow down, and yield to traffic already in the circle",
+            "Stop in the middle of the roundabout to decide where to go",
+            "Change lanes inside the roundabout to exit quicker"
+        ],
+        "answer": "Choose the correct lane, slow down, and yield to traffic already in the circle"
+    },
+    {
+        "question": "Which action should you take before exiting a roundabout?",
+        "options": [
+            "Continue driving without signalling",
+            "Use your right turn signal just before your exit",
+            "Stop in the roundabout to let vehicles pass",
+            "Sound your horn to alert other drivers"
+        ],
+        "answer": "Use your right turn signal just before your exit"
+    },
+    {
+        "question": "What is the correct sequence for changing lanes safely?",
+        "options": [
+            "Signal, move into the lane, then check mirrors",
+            "Check mirrors and blind spot, signal, ensure it\u2019s safe, and then change lanes",
+            "Check mirrors, change lanes, and then signal",
+            "Signal only if there is traffic present"
+        ],
+        "answer": "Check mirrors and blind spot, signal, ensure it\u2019s safe, and then change lanes"
+    },
+    {
+        "question": "What should you do if you feel tired while driving?",
+        "options": [
+            "Open the window and turn up the radio",
+            "Continue driving but slow down",
+            "Stop for a rest or change drivers",
+            "Drink coffee and keep driving"
+        ],
+        "answer": "Stop for a rest or change drivers"
+    },
+    {
+        "question": "How must you respond to flashing red lights at a railway crossing?",
+        "options": [
+            "Slow down and proceed with caution",
+            "Accelerate to cross quickly",
+            "Stop at least 5 metres from the nearest rail and wait until the lights stop",
+            "Drive around the gates if no train is visible"
+        ],
+        "answer": "Stop at least 5 metres from the nearest rail and wait until the lights stop"
+    },
+    {
+        "question": "When entering a traffic circle or roundabout, which rule applies?",
+        "options": [
+            "You have the right of way over vehicles already in the circle",
+            "Yield to traffic already in the circle and to pedestrians",
+            "Always drive in the outermost lane regardless of your exit",
+            "Stop in the centre of the circle before proceeding"
+        ],
+        "answer": "Yield to traffic already in the circle and to pedestrians"
+    },
+    {
+        "question": "In heavy rain or icy conditions, which feature should you avoid using?",
+        "options": [
+            "Windshield wipers",
+            "Headlights",
+            "Cruise control",
+            "Defrost"
+        ],
+        "answer": "Cruise control"
+    },
+    {
+        "question": "What is the rule about reversing on a freeway?",
+        "options": [
+            "Reversing is permitted if there are no vehicles behind you",
+            "You may reverse only at night",
+            "Reversing is never allowed on a freeway",
+            "You may reverse to return to a missed exit if you use hazard lights"
+        ],
+        "answer": "Reversing is never allowed on a freeway"
+    },
+    {
+        "question": "A white diamond painted on a lane indicates that the lane is:",
+        "options": [
+            "Reserved for specific vehicles such as high-occupancy or buses",
+            "Under construction",
+            "Reserved for passing only",
+            "Designated for motorcycles only"
+        ],
+        "answer": "Reserved for specific vehicles such as high-occupancy or buses"
+    },
+    {
+        "question": "If you are angry or upset before driving, what is the best course of action?",
+        "options": [
+            "Drive faster to get to your destination sooner",
+            "Calm down and compose yourself before driving",
+            "Take your anger out by honking at others",
+            "Focus on driving to distract yourself from the anger"
+        ],
+        "answer": "Calm down and compose yourself before driving"
+    },
+    {
+        "question": "Which vehicles may display both red and white flashing lights in Alberta?",
+        "options": [
+            "School buses",
+            "Tow trucks",
+            "Ambulances and fire trucks",
+            "Snow plows"
+        ],
+        "answer": "Ambulances and fire trucks"
+    },
+    {
+        "question": "When exiting a highway using a deceleration lane, you should:",
+        "options": [
+            "Reduce your speed on the main highway before entering the deceleration lane",
+            "Enter the deceleration lane first and then reduce your speed to the exit speed",
+            "Maintain your highway speed until you reach the exit ramp",
+            "Stop at the start of the deceleration lane before proceeding"
+        ],
+        "answer": "Enter the deceleration lane first and then reduce your speed to the exit speed"
+    },
+    {
+        "question": "When turning left at an intersection, you must:",
+        "options": [
+            "Yield to oncoming traffic and pedestrians before completing the turn",
+            "Proceed immediately since you have right of way",
+            "Only yield to vehicles, not pedestrians",
+            "Turn as soon as the light turns green without checking"
+        ],
+        "answer": "Yield to oncoming traffic and pedestrians before completing the turn"
+    },
+    {
+        "question": "Which of the following is NOT considered a turnabout?",
+        "options": [
+            "A three-point turn",
+            "A U-turn",
+            "A right turn at an intersection",
+            "A two-point turn using a driveway"
+        ],
+        "answer": "A right turn at an intersection"
+    },
+    {
+        "question": "When going straight through an intersection on a solid green light, who has the right of way?",
+        "options": [
+            "Drivers going straight on the green light have the right of way",
+            "Drivers turning left have the right of way",
+            "Pedestrians must yield to vehicles turning right",
+            "No one; everyone must stop"
+        ],
+        "answer": "Drivers going straight on the green light have the right of way"
+    },
+    {
+        "question": "On a solid green light, what must drivers do when turning right?",
+        "options": [
+            "Yield to pedestrians in the crosswalk before turning",
+            "Accelerate through the turn without signalling",
+            "Yield only to oncoming vehicles",
+            "Make the turn only after the light turns yellow"
+        ],
+        "answer": "Yield to pedestrians in the crosswalk before turning"
+    },
+    {
+        "question": "When you intend to turn left on a solid green light, you should:",
+        "options": [
+            "Wait for a gap and yield to oncoming traffic and pedestrians",
+            "Enter the intersection immediately and stop in the middle",
+            "Turn without signalling since you have the green light",
+            "Turn only when the light turns red"
+        ],
+        "answer": "Wait for a gap and yield to oncoming traffic and pedestrians"
+    },
+    {
+        "question": "A flashing left-turn arrow at an intersection means:",
+        "options": [
+            "You have the right of way to turn left without yielding to oncoming traffic or pedestrians",
+            "You must treat it like a stop sign",
+            "Left turns are prohibited",
+            "You may not enter the intersection"
+        ],
+        "answer": "You have the right of way to turn left without yielding to oncoming traffic or pedestrians"
+    },
+    {
+        "question": "What should you do when approaching a yellow (amber) traffic light?",
+        "options": [
+            "Speed up to get through before it turns red regardless of distance",
+            "Use judgement: proceed only if you can clear the intersection before it turns red, otherwise stop",
+            "Stop immediately even if it forces other drivers to brake hard",
+            "Ignore the yellow light and treat it as green"
+        ],
+        "answer": "Use judgement: proceed only if you can clear the intersection before it turns red, otherwise stop"
+    },
+    {
+        "question": "If you are waiting to turn left and the light turns yellow, you should:",
+        "options": [
+            "Reverse out of the intersection and wait for the next green light",
+            "Remain stopped until the light turns green again",
+            "Complete your turn and clear the intersection when it is safe",
+            "Stay in the intersection until other vehicles force you to move"
+        ],
+        "answer": "Complete your turn and clear the intersection when it is safe"
+    },
+    {
+        "question": "Before turning right on a red light in Alberta, you must:",
+        "options": [
+            "Slow down and proceed if no vehicles are coming",
+            "Come to a complete stop and yield to traffic and pedestrians before turning when clear",
+            "Turn without stopping if you are in a hurry",
+            "Turn only if there is a green arrow"
+        ],
+        "answer": "Come to a complete stop and yield to traffic and pedestrians before turning when clear"
+    },
+    {
+        "question": "In which situation is turning left on a red light permitted?",
+        "options": [
+            "From any street as long as no traffic is present",
+            "From a one-way street onto another one-way street after a complete stop and when clear",
+            "Turning left on red is never allowed",
+            "Whenever the green arrow is lit"
+        ],
+        "answer": "From a one-way street onto another one-way street after a complete stop and when clear"
+    },
+    {
+        "question": "What does a flashing red traffic light mean?",
+        "options": [
+            "Proceed with caution without stopping",
+            "Treat it as a stop sign: stop and proceed when safe",
+            "Yield to vehicles only",
+            "Ignore the light and maintain speed"
+        ],
+        "answer": "Treat it as a stop sign: stop and proceed when safe"
+    },
+    {
+        "question": "When you see a flashing yellow traffic light, you should:",
+        "options": [
+            "Stop completely and wait for green",
+            "Slow down and proceed with caution, yielding as required",
+            "Speed up to get through quickly",
+            "Ignore it; it only applies to pedestrians"
+        ],
+        "answer": "Slow down and proceed with caution, yielding as required"
+    },
+    {
+        "question": "What must drivers do when exiting an alley, driveway or parking lot onto a street?",
+        "options": [
+            "Sound the horn and proceed without stopping",
+            "Treat it like an invisible stop sign: stop before the sidewalk and yield to pedestrians and traffic",
+            "Reverse onto the street to avoid stopping",
+            "Look left only and then drive out"
+        ],
+        "answer": "Treat it like an invisible stop sign: stop before the sidewalk and yield to pedestrians and traffic"
+    },
+    {
+        "question": "What is the maximum speed limit in an urban school or playground zone when it is in effect?",
+        "options": [
+            "40 km/h",
+            "30 km/h",
+            "50 km/h",
+            "60 km/h"
+        ],
+        "answer": "30 km/h"
+    },
+    {
+        "question": "On school days, when are school zone speed limits typically in effect?",
+        "options": [
+            "8:00\u20139:30 AM, 11:30 AM\u20131:30 PM and 3:00\u20134:30 PM",
+            "Only during morning drop-off from 7:00\u20138:00 AM",
+            "12:00 PM\u20131:00 PM only",
+            "8:00 AM\u20136:00 PM continuously"
+        ],
+        "answer": "8:00\u20139:30 AM, 11:30 AM\u20131:30 PM and 3:00\u20134:30 PM"
+    },
+    {
+        "question": "Playground zone speed limits in Alberta apply:",
+        "options": [
+            "Only on weekdays during school hours",
+            "Every day from 8:30 AM until one hour after sunset",
+            "Only when children are present",
+            "From 7:00 AM to 7:00 PM year-round"
+        ],
+        "answer": "Every day from 8:30 AM until one hour after sunset"
+    },
+    {
+        "question": "What are you prohibited from doing in a school or playground zone when the speed limit is in effect?",
+        "options": [
+            "Turning left",
+            "Passing another vehicle",
+            "Stopping to let children cross",
+            "Driving at the posted speed"
+        ],
+        "answer": "Passing another vehicle"
+    },
+    {
+        "question": "Who is required to wear a seat belt under Alberta law?",
+        "options": [
+            "Only the driver and front-seat passenger",
+            "All vehicle occupants; drivers must ensure passengers under 16 are properly restrained",
+            "Only passengers under 18 years old",
+            "Seat belts are optional for adults in the back seat"
+        ],
+        "answer": "All vehicle occupants; drivers must ensure passengers under 16 are properly restrained"
+    },
+    {
+        "question": "How should a seat belt be worn correctly?",
+        "options": [
+            "Lap belt across the stomach and shoulder belt under the arm",
+            "Lap belt across the hips and shoulder belt across the chest",
+            "Only the lap belt needs to be used",
+            "Shoulder belt behind the back and lap belt across the stomach"
+        ],
+        "answer": "Lap belt across the hips and shoulder belt across the chest"
+    },
+    {
+        "question": "Children under six years old and weighing less than 18 kg must be secured in:",
+        "options": [
+            "An approved child safety seat",
+            "A regular seat belt",
+            "A booster seat only",
+            "No restraint is needed if sitting in the back seat"
+        ],
+        "answer": "An approved child safety seat"
+    },
+    {
+        "question": "Booster seats are recommended (though not legally required) until approximately what age or weight?",
+        "options": [
+            "Age 9 or until about 37 kg",
+            "Age 6 or until 18 kg",
+            "Age 12 or until 50 kg",
+            "Age 4 or until 14 kg"
+        ],
+        "answer": "Age 9 or until about 37 kg"
+    },
+    {
+        "question": "What is the fine for failing to wear a seat belt or properly restrain a child in Alberta?",
+        "options": [
+            "$155",
+            "$567",
+            "$100",
+            "$250"
+        ],
+        "answer": "$155"
+    },
+    {
+        "question": "What does the two\u2011second rule help drivers determine?",
+        "options": [
+            "The correct time to turn on headlights",
+            "A safe following distance from the vehicle ahead",
+            "The time needed to cross an intersection",
+            "How long to wait at a stop sign"
+        ],
+        "answer": "A safe following distance from the vehicle ahead"
+    },
+    {
+        "question": "How do you apply the two\u2011second rule to check following distance?",
+        "options": [
+            "Drive two seconds faster than the car ahead",
+            "Pick a fixed object ahead and count \u2018one\u2011thousand\u2011and\u2011one, one\u2011thousand\u2011and\u2011two\u2019; if you reach it before finishing, you\u2019re too close",
+            "Count to five before accelerating after a stop sign",
+            "Check the time on your watch every two seconds"
+        ],
+        "answer": "Pick a fixed object ahead and count \u2018one\u2011thousand\u2011and\u2011one, one\u2011thousand\u2011and\u2011two\u2019; if you reach it before finishing, you\u2019re too close"
+    },
+    {
+        "question": "What should drivers do with their following distance in poor weather or at night?",
+        "options": [
+            "Decrease it to maintain traffic flow",
+            "Keep it at exactly two seconds",
+            "Increase it to allow more reaction time",
+            "Following distance doesn\u2019t matter in poor weather"
+        ],
+        "answer": "Increase it to allow more reaction time"
+    },
+    {
+        "question": "When a school bus has flashing red lights and its stop arm extended, drivers approaching from both directions must:",
+        "options": [
+            "Slow down and pass cautiously",
+            "Stop until the lights stop flashing unless you are on the opposite side of a divided highway",
+            "Pass the bus if no children are visible",
+            "Only stop if you are directly behind the bus"
+        ],
+        "answer": "Stop until the lights stop flashing unless you are on the opposite side of a divided highway"
+    },
+    {
+        "question": "What is the approximate penalty for failing to stop for a school bus with flashing red lights in Alberta?",
+        "options": [
+            "$155 fine and two demerits",
+            "$567 fine and six demerit points",
+            "$100 fine and one demerit",
+            "$250 fine and three demerits"
+        ],
+        "answer": "$567 fine and six demerit points"
+    },
+    {
+        "question": "How should you drive when following a school bus on the road?",
+        "options": [
+            "Stay a safe distance behind and be prepared to stop; do not pass when red lights are flashing",
+            "Drive closely behind so other vehicles cannot cut in",
+            "Pass the bus whenever possible to save time",
+            "Ignore flashing lights because they are optional"
+        ],
+        "answer": "Stay a safe distance behind and be prepared to stop; do not pass when red lights are flashing"
+    },
+    {
+        "question": "For Class 7 and Class 5\u2011GDL drivers, what is the allowed blood\u2011alcohol concentration (BAC) and cannabis (THC) limit?",
+        "options": [
+            "0.05% BAC and 2 ng (nanograms) of THC",
+            "0.08% BAC and 5 ng of THC",
+            "Zero tolerance\u20140.00% BAC and no cannabis or other drugs",
+            "Any amount as long as they can safely control the vehicle"
+        ],
+        "answer": "Zero tolerance\u20140.00% BAC and no cannabis or other drugs"
+    },
+    {
+        "question": "What happens if a GDL driver is found with any amount of alcohol or cannabis in their system?",
+        "options": [
+            "They receive a warning but no penalty",
+            "Immediate licence suspension, fines, and possible extension of the probationary period",
+            "They are allowed to continue driving as long as it\u2019s below 0.08% BAC",
+            "Their licence is automatically upgraded to a full licence"
+        ],
+        "answer": "Immediate licence suspension, fines, and possible extension of the probationary period"
+    },
+    {
+        "question": "When parking uphill with a curb, how should you position your wheels?",
+        "options": [
+            "Turn the wheels toward the curb",
+            "Leave wheels straight ahead",
+            "Turn the wheels away from the curb and set the parking brake",
+            "It doesn\u2019t matter how the wheels are positioned"
+        ],
+        "answer": "Turn the wheels away from the curb and set the parking brake"
+    },
+    {
+        "question": "When parking uphill without a curb, you should:",
+        "options": [
+            "Turn the wheels right (toward the edge of the road) and engage the parking brake",
+            "Turn the wheels left toward the centre of the road",
+            "Leave the wheels straight and do not set the parking brake",
+            "Turn the wheels sharply left and reverse slightly"
+        ],
+        "answer": "Turn the wheels right (toward the edge of the road) and engage the parking brake"
+    },
+    {
+        "question": "When parking downhill with a curb, what is the correct wheel position?",
+        "options": [
+            "Turn the wheels toward the curb and let the front tire gently touch",
+            "Turn the wheels away from the curb",
+            "Leave the wheels straight and rely on the parking brake",
+            "It doesn\u2019t matter; downhill parking is not allowed"
+        ],
+        "answer": "Turn the wheels toward the curb and let the front tire gently touch"
+    },
+    {
+        "question": "When parking downhill without a curb, you should:",
+        "options": [
+            "Turn the wheels right (toward the shoulder)",
+            "Turn the wheels left and park as usual",
+            "Leave the wheels straight and engage the parking brake",
+            "Point the wheels uphill so you can roll forward"
+        ],
+        "answer": "Turn the wheels right (toward the shoulder)"
+    },
+    {
+        "question": "Which sign shape is exclusively used for stop signs?",
+        "options": [
+            "Diamond",
+            "Octagon",
+            "Equilateral triangle",
+            "Vertical rectangle"
+        ],
+        "answer": "Octagon"
+    },
+    {
+        "question": "What sign shape is used exclusively for yield signs?",
+        "options": [
+            "Diamond",
+            "Circular",
+            "Equilateral triangle pointing downward",
+            "Pentagon"
+        ],
+        "answer": "Equilateral triangle pointing downward"
+    },
+    {
+        "question": "Which sign shape marks a no\u2011passing zone on the left side of the road?",
+        "options": [
+            "Diamond",
+            "Pennant\u2011shaped sign",
+            "Crossbuck",
+            "Square"
+        ],
+        "answer": "Pennant\u2011shaped sign"
+    },
+    {
+        "question": "How far must you park from a crosswalk, intersection or stop sign to avoid blocking the view?",
+        "options": [
+            "At least 2 metres",
+            "At least 5 metres",
+            "At least 15 metres",
+            "There is no required distance"
+        ],
+        "answer": "At least 5 metres"
+    },
+    {
+        "question": "At a crosswalk, which statement is true?",
+        "options": [
+            "Drivers have the right of way and pedestrians must wait",
+            "Drivers must yield to pedestrians at both marked and unmarked crosswalks",
+            "Pedestrians must cross only when the crosswalk is marked with paint",
+            "Vehicles may pass a car slowing down at a crosswalk"
+        ],
+        "answer": "Drivers must yield to pedestrians at both marked and unmarked crosswalks"
+    },
+    {
+        "question": "When approaching a crosswalk and another vehicle is slowing down, you should:",
+        "options": [
+            "Pass the slowing vehicle to save time",
+            "Stay behind the vehicle because a pedestrian may be crossing",
+            "Sound your horn to warn the pedestrian",
+            "Accelerate to clear the crosswalk quickly"
+        ],
+        "answer": "Stay behind the vehicle because a pedestrian may be crossing"
+    },
+    {
+        "question": "What is the safest time to proceed through a crosswalk?",
+        "options": [
+            "When a pedestrian has halfway crossed",
+            "As soon as the light turns green",
+            "When the crosswalk is completely clear",
+            "Whenever you think you can squeeze through"
+        ],
+        "answer": "When the crosswalk is completely clear"
+    },
+    {
+        "question": "What are the standard unmarked speed limits for roadways inside urban areas in Alberta when no sign is posted?",
+        "options": [
+            "30 km/h",
+            "50 km/h",
+            "80 km/h",
+            "100 km/h"
+        ],
+        "answer": "50 km/h"
+    },
+    {
+        "question": "What is the typical speed limit on a provincial highway outside an urban area unless otherwise posted?",
+        "options": [
+            "80 km/h",
+            "90 km/h",
+            "100 km/h",
+            "110 km/h"
+        ],
+        "answer": "100 km/h"
+    },
+    {
+        "question": "On a provincial highway inside an urban area, the default speed limit is:",
+        "options": [
+            "60 km/h",
+            "70 km/h",
+            "80 km/h",
+            "100 km/h"
+        ],
+        "answer": "80 km/h"
+    },
+    {
+        "question": "If no speed limit sign is posted on a roadway outside an urban area, what is the usual limit?",
+        "options": [
+            "50 km/h",
+            "70 km/h",
+            "80 km/h",
+            "90 km/h"
+        ],
+        "answer": "80 km/h"
+    }
+]
