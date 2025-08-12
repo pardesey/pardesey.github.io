@@ -119,6 +119,19 @@
   </div>
 
   <script>
+// Auto-load local JSON from same folder
+(async function(){
+  try {
+    const res = await fetch('alberta_class7_questions.json', { headers: { 'Accept': 'application/json' } });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const json = await res.json();
+    loadItems(normalize(json));
+  } catch (e) {
+    console.error('Failed to load default JSON:', e);
+    intro.classList.remove('hidden'); // fallback to manual load
+  }
+})();
+    
     const el = (id) => document.getElementById(id);
     const intro = el('intro');
     const quiz = el('quiz');
