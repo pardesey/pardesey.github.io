@@ -60,29 +60,7 @@
   <div class="app">
     <header>
       <h1>Alberta Class 7 – Practice Quiz</h1>
-      <div class="controls">
-        <input id="src" type="url" placeholder="Paste RAW JSON URL (e.g., https://gist.githubusercontent.com/.../raw/alberta_class7_questions_pretty.json)" />
-        <button id="load">Load</button>
-        <label class="button secondary">
-          <input id="file" type="file" accept="application/json" class="hidden" />
-          <span class="pill">Upload JSON</span>
-        </label>
-        <button id="reset" class="secondary">Reset</button>
-      </div>
     </header>
-
-    <div class="card" id="intro">
-      <p>Load questions by pasting a <strong>RAW</strong> JSON URL (e.g., from your GitHub Gist) or by uploading a local <code>.json</code> file. You can also pass <code>?src=&lt;raw-url&gt;</code> in the page URL.</p>
-      <details>
-        <summary>JSON structure (expected)</summary>
-        <pre style="white-space:pre-wrap; color: var(--muted);">
-[
-  {"question": "...", "options": ["A","B","C","D"], "answer": "B"},
-  ...
-]
-        </pre>
-      </details>
-    </div>
 
     <div class="card hidden" id="quiz">
       <div class="meta">
@@ -113,15 +91,10 @@
       </div>
     </div>
 
-    <div class="footer">
-      Tip: Host this file on GitHub Pages or Netlify. Provide the <strong>RAW</strong> JSON URL via the input above or the <code>?src=</code> query.
-    </div>
   </div>
 
   <script>
-    const el = (id) => document.getElementById(id);
-    const intro = el('intro');
-    const quiz = el('quiz');
+    const el = (id) => document.getElementById(id);    const quiz = el('quiz');
     const result = el('result');
     const qEl = el('question');
     const optsEl = el('options');
@@ -156,7 +129,7 @@
       state.items = items;
       state.order = shuffle([...Array(items.length).keys()]);
       state.idx = 0; state.score = 0; state.chosen = new Map();
-      intro.classList.add('hidden'); result.classList.add('hidden'); quiz.classList.remove('hidden');
+      result.classList.add('hidden'); quiz.classList.remove('hidden');
       render();
     }
 
@@ -235,36 +208,22 @@
     el('finish').onclick = finish;
     el('retry').onclick = () => { state.idx = 0; state.score = 0; state.chosen = new Map(); quiz.classList.remove('hidden'); result.classList.add('hidden'); render(); };
     el('restart').onclick = () => { location.search = ''; location.reload(); };
-    el('reset').onclick = () => { location.search=''; location.reload(); };
-
-    // Loaders
-    el('load').onclick = async () => {
-      const url = el('src').value.trim();
-      if (!url) return alert('Paste a RAW JSON URL first.');
+    // el('reset').onclick = () => { location.search=''; location.reload(); };
+    
+    const resetBtn = el('reset');
+    if (resetBtn) resetBtn.onclick = () => { location.search=''; location.reload(); };
+    
+    // Auto-load JSON from same folder
+    (async function(){
       try {
-        const res = await fetch(url, { headers: { 'Accept': 'application/json' } });
+        const res = await fetch('alberta_class7_questions.json', { headers: { 'Accept': 'application/json' } });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const json = await res.json();
         loadItems(normalize(json));
-      } catch (e) { alert('Failed to load JSON: ' + e.message); }
-    };
-
-    el('file').addEventListener('change', (ev)=>{
-      const file = ev.target.files?.[0];
-      if (!file) return;
-      const reader = new FileReader();
-      reader.onload = () => {
-        try { const json = JSON.parse(reader.result); loadItems(normalize(json)); }
-        catch (e) { alert('Invalid JSON: ' + e.message); }
-      };
-      reader.readAsText(file);
-    });
-
-    // Query param loader (?src=...)
-    (function(){
-      const p = new URLSearchParams(location.search);
-      const src = p.get('src');
-      if (src) { el('src').value = src; el('load').click(); }
+      } catch (e) {
+        console.error('Failed to load default JSON:', e);
+        alert('Failed to load quiz questions. Please check alberta_class7_questions.json');
+      }
     })();
   </script>
 </body>
